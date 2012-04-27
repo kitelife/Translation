@@ -149,4 +149,117 @@ Mathematicians stand on each others' shoulders and computer scientists stand on 
 
 It's not that Perl programmers are idiots, it's that the language rewards idiotic behavior in a way that no other language or tool has ever done.  --- `Erik Naggum <http://genius.cat-v.org/erik-naggum>`_ comp.lang.lisp
 
+并非Perl程序员是白痴，是语言本身鼓励一些其他语言或工具并不鼓励的白痴行为。
+
+------
+
+Out-of-band == should be on a separate channel... --- AI Viro
+
+超出带宽的部分 == 应该在另一个单独的信道上。[译注:擦，我弱爆，无法理解这话的内涵]
+
+------
+
+It's a curious thing about our industry: not only do we not learn from our mistakes, we also don't learn from our successes. --- Keith Braithwaite
+
+关于我们行业有个奇特的事情：我们不仅没有从错误中吸取教训，也没有从成功中所有收获。
+
+------
+
+Ethernet always wins. --- Andy Bechtolsheim
+
+以太网会一直成功。 [译注：内涵呢？]
+
+------
+
+The central enemy of reliability is complexity. --- Geer et al.
+
+可靠的最大敌人是复杂。
+
+------
+
+Simplicity is prerequisite for reliability. --- Edsger W. Dijkstra
+
+简单是可靠的先决条件。
+
+------
+
+Beware of "the real world". A speaker's apeal to it is always an invitation not to challenge his tacit assumptions. --- Edsger W. Dijkstra
+
+提防"现实世界"一词，演讲者对它的强调往往是为了诱使你不挑剔他的默认假设。 [译注：不是很懂内涵]
+
+------
+
+`Unix <http://doc.cat-v.org/unix/>`_ is a junk OS designed by a committee of PhDs.  --- Dave Cutler
+
+Unix是一个由博士委员会设计的垃圾操作系统。
+
+------
+
+I've wondered whether Linux sysfs should be called sysphilis. --- forsyth
+
+我曾想过Linux的sysfs是否应该称为梅毒(syphilis).
+
+------
+
+A program is portable to the extent that it can be easily moved to a new computing environment with much less effort than would be required to write it afresh.  --- W. Stan Brown [http://groups.google.com/group/comp.std.c/msg/083fb09444dbbc76]
+
+程序的可移植性应该不多不少地达到这样一个程度：比重写程序花少得多的工夫就能轻易地应用到一个新的计算环境。(译注：可以看看链接中大牛们的讨论)
+
+------
+
+Programming graphics in X is like finding the square root of PI using Roman numerals.  --- `Henry Spencer <http://doc.cat-v.org/henry-spancer>`_
+
+在X视窗系统进行图形编程就好比使用罗马数字求PI的平方根。
+
+------
+
+Forward thinking was just the thing that made Multics what it is today.  --- Erik Quanstrom
+
+超前思维使得Multics成了今天的样子。
+
+------
+
+The Eight Fallacies of Distributed Computing
+
+Essentially everyone, when they first build a distributed application, makes the following eight assumptions. All prove to be false in the long run and all cause big trouble and painful learning experiences.
+
+1. The network is reliable
+
+2. Latency is zero
+
+3. Bandwidth is infinite
+
+4. The network is secure
+
+5. Topology doesn't change
+
+6. There is one administrator
+
+7. Transport cost is zero
+
+8. The network is homogeneous
+
+--- Peter Deutsch
+
+分布式计算的八大谬误
+
+实际上，每个人，当他第一次构建分布式应用时，都会作出如下八个假设。长远来看，这些假设都被证明是错误的，并且都造成了巨大的麻烦和沉痛的经验教训。
+
+1. 网络可靠
+
+2. 零延迟
+
+3. 带宽无限
+
+4. 安全网络
+
+5. 拓扑不变
+
+6. 有个管理者
+
+7. 传输代价为零
+
+8. 网络同构
+
+------
 
