@@ -107,4 +107,46 @@ Life is too short to run proprietary software. --- Bdale Garbee
 
 ------
 
+I had a nightmare once in which I a had convinced a friend how wonderful `C++ <http://harmful.cat-v.org/software/c++/>`_ is. A while later he came back, and he was mad.[sic] --- Robin Rosenberg [http://groups.google.com/groups?selm=1fYEA-pz-21%40gated-at.bofh.it]
+
+我曾做过个噩梦，梦中我信服一个朋友关于C++有多牛逼的看法。之后一会儿他回来了，已经疯了。
+
+------
+
+`XML <http://harmful.cat-v.org/software/xml/>`_ is like violence: if it doesn't solve your problem, you aren't using enough of it. --- Heard from someone working at Microsoft
+
+XML如同暴力：如果它没能解决你的问题，就说明你没充分使用它。
+
+------
+
+XML is like violence. Sure, it seems like a quick and easy solution at first, but then it spirals out of control into utter chaos.   --- Sarkos in reddit
+
+XML如同暴力。一开始的时候，它确实是个快速简单的解决方案，但之后它会让一切失控得一团糟。
+
+------
+
+Threads [and] signals [are] a platform-dependent trail of misery, despair, horror and madness. --- Anthony Baxter [http://mail.python.org/pipermail/python-dev/2005-July/]
+
+线程，信号是一切平台相关的痛苦，绝望，恐惧以及愚蠢的苗头。[译注:trail在这里翻译成什么才最合适呢?]
+
+------
+
+Computers are about making life easier in much the same way that the Republican party is about fiscal responsibility and a culture of life. --- mister_borogove [http://www.livejournal.com/users/jwz/536902.html?thread=9506374#t9506374]
+
+计算机之于更简单的生活，就如同共和党之于财政责任和生活文化。
+
+------
+
+All software sucks, be it open-source [or] proprietary. The only question is what can be done with particular instance of suckage, and that's where having the source matters. --- viro [http://www.ussg.iu.edu/hypermail/linux/kernel/0404.3/1344.html]
+
+------
+
+Mathematicians stand on each others' shoulders and computer scientists stand on each others' toes. --- Richard Hamming
+
+数学家相互站在对方的肩膀上，计算机科学家相互站在对方的脚趾上。
+
+------
+
+It's not that Perl programmers are idiots, it's that the language rewards idiotic behavior in a way that no other language or tool has ever done.  --- `Erik Naggum <http://genius.cat-v.org/erik-naggum>`_ comp.lang.lisp
+
 
