@@ -207,13 +207,13 @@ A program is portable to the extent that it can be easily moved to a new computi
 
 ------
 
-Programming graphics in X is like finding the square root of PI using Roman numerals.  --- `Henry Spencer <http://doc.cat-v.org/henry-spancer>`_
+Programming graphics in X is like finding the square root of PI using Roman numerals.  ``--- `Henry Spencer <http://doc.cat-v.org/henry-spancer>`_ ``
 
 在X视窗系统进行图形编程就好比使用罗马数字求PI的平方根。
 
 ------
 
-Forward thinking was just the thing that made Multics what it is today.  --- Erik Quanstrom
+Forward thinking was just the thing that made Multics what it is today.  ``--- Erik Quanstrom``
 
 超前思维使得Multics成了今天的样子。
 
@@ -239,7 +239,7 @@ Essentially everyone, when they first build a distributed application, makes the
 
 8. The network is homogeneous
 
---- Peter Deutsch
+``--- Peter Deutsch`` 
 
 分布式计算的八大谬误
 
@@ -273,7 +273,7 @@ Date:Thu,8 May 2003 04:05:31 GMT
 
 I'm confident that tomorrow's Unix will look like today's Unix, only cruftier.
 
-Russ
+``Russ`` 
 
 > 明天的Unix会是啥样的呢？
 
@@ -281,7 +281,7 @@ Russ
 
 ------
 
-You want to make your way in the CS field? Simple. Calculate rough time of amnesia (hell, 10 years is plenty, probably 10 months is plenty), go to the dusty archives, dig out something fun, and go for it. It's worked for many people, and it can work for you.  --- Ron Minnich
+You want to make your way in the CS field? Simple. Calculate rough time of amnesia (hell, 10 years is plenty, probably 10 months is plenty), go to the dusty archives, dig out something fun, and go for it. It's worked for many people, and it can work for you.  ``--- Ron Minnich`` 
 
 你想在计算机科学领域获得成功吗？很简单，估计一下多长时间之前的东西已被遗忘(擦，十年就足够了，也许10个月就够了)，从尘封的档案中挖掘出一些有趣的东西，然后加油吧。很多成功的人都是这么干的，你也可以。
 
