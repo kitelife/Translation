@@ -283,4 +283,18 @@ Russ
 
 You want to make your way in the CS field? Simple. Calculate rough time of amnesia (hell, 10 years is plenty, probably 10 months is plenty), go to the dusty archives, dig out something fun, and go for it. It's worked for many people, and it can work for you.  --- Ron Minnich
 
+你想在计算机科学领域获得成功吗？很简单，估计一下多长时间之前的东西已被遗忘(擦，十年就足够了，也许10个月就够了)，从尘封的档案中挖掘出一些有趣的东西，然后加油吧。很多成功的人都是这么干的，你也可以。
+
+------
+
+From:Alexander Viro <viro math psu edu>
+
+Subject:Re:ANNOUNCE: Linux Kernel ORB: kORBit
+
+Date: Sat, 9 Dec 2000 00:39:36 -0500 (EST)
+
+[...]
+
+Yeah..."Infinitely extendable API" and all such. Roughly translated as "we can't live without API bloat".Frankly, judging by the GNOME codebase people who designed the thing[GNOME] are culturally incompatible with UNIX.
+
 
