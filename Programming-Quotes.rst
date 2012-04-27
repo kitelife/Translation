@@ -263,3 +263,24 @@ Essentially everyone, when they first build a distributed application, makes the
 
 ------
 
+From:rsc@plan9.bell-labs.com (Russ Cox)
+
+Subject:Re:[9fans] design clairvoyance & the 9 way
+
+Date:Thu,8 May 2003 04:05:31 GMT
+
+> What does tomorrow's unix look like?
+
+I'm confident that tomorrow's Unix will look like today's Unix, only cruftier.
+
+Russ
+
+> 明天的Unix会是啥样的呢？
+
+我相信明天的Unix会和今天的Unix一样，只是更加恶心。[译注：cruftier是crufty的比较级，crufty是一个行话(jargon)用词。在The Jargon File一书中的定义：1.Poorly built, possibly over-complex; 2. Unpleasant, especially to the touch; 3. Generally unpleasant;...。这个名言应该也是设计实现plan9操作系统的原因之一]
+
+------
+
+You want to make your way in the CS field? Simple. Calculate rough time of amnesia (hell, 10 years is plenty, probably 10 months is plenty), go to the dusty archives, dig out something fun, and go for it. It's worked for many people, and it can work for you.  --- Ron Minnich
+
+
