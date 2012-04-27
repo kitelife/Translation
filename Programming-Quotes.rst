@@ -297,4 +297,37 @@ Date: Sat, 9 Dec 2000 00:39:36 -0500 (EST)
 
 Yeah..."Infinitely extendable API" and all such. Roughly translated as "we can't live without API bloat".Frankly, judging by the GNOME codebase people who designed the thing[GNOME] are culturally incompatible with UNIX.
 
+是的..."无限可扩展API"以及所有这些，可粗略理解为"API膨胀是必需的"。坦白地说，从GNOME的代码基可以判断设计GNOME的人所遵从的文化与UNIX是不一致的。[译注：感觉翻译得有点狗血]
 
+------
+
+> What's wrong with perl?
+
+It combines all the worst aspects of C and Lisp: a billion different sublanguages in one monolithic executable. It combines the power of C with the readability of PostScript.
+
+> To me perl is the triumph of utalitarianism.
+
+So are cockroaches. So is 'sendmail'.
+
+--- **jwz** [https://groups.google.com/forum/?fromgroups#!msg/alt.religion.emacs/DR057Srw5-c/qh5x9CxEX90J]
+
+> Perl的问题出在哪？
+
+它结合了C和Lisp最糟糕的方面：单个可执行文件中有十亿种不同的次语言。结合了C的威力以及PostScript的可读性。
+
+> 对我来说，Perl是功利主义(译注：utalitarianism可能是utilitarianism的误写)的胜利。
+
+蟑螂如此，'sendmail'也是如此。
+
+[译注:jwz是对 `JamieZawinski <http://en.wikipedia.org/wiki/Jamie_Zawinski>`_ 的敬称]
+
+------
+
+From:ron minnich <rminnich@lanl.gov>
+Subject:[9fans] microkernels
+
+are they the O-O of the OS world? Always the promises ...
+
+**ron**
+
+他们是操作系统世界里的面向对象么？总是如此承诺... [译注：没怎么懂内涵]
