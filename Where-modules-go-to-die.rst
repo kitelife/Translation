@@ -22,6 +22,7 @@
 在这个简短的演讲中，他大部分时间是在讲述他的request库以及他正试图解决的urllib2存在的问题。Reitz认为标准库中的一些模块违背了 `Python之禅 <http://www.python.org/dev/peps/pep-0020/>`_ 的一些准则，特别是:
 
     ``美胜于丑(Beautiful is better than ugly)``
+
     ``凡值得说，必易于说(If the implementation is hard to explain, it's a bad idea.)``
 
 以及
@@ -43,6 +44,7 @@
 Hacker News上的几个Python程序员认为我关于subprocess模块的抱怨是没有事实依据的。我很高兴看到核心开发者 `Nick Coghlan <http://www.boredomandlaziness.org/>`_  认同我的看法，Reitz也是：
 
     一篇关于subprocess模块令人沮丧的使用体验的精彩文章： `leancrew.com/all-this/2012/… <http://www.leancrew.com/all-this/2012/04/python-doesnt-play-nicely-with-others/>`_
+
     --- Kenneth Reith( `@kennethreitz <http://twitter.com/#!/kennethreitz>`_ ) `Tue Apr 17 2012 <https://twitter.com/#!/kennethreitz/status/192391385737994240>`_
 
 "精彩"一词有些夸张了，但是很高兴看到在Python社区有实质影响的人意识到了：对于普通程序员来说，语言以及它的函数库应该是易用的。
