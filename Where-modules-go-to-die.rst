@@ -35,7 +35,7 @@
 
 读者Carl， `评论 <http://www.leancrew.com/all-this/2012/04/ftp-v-ftplib/>`_ 我的另一篇标准库牢骚文时，说道：
 
-    Python“内置电池”的哲学存在问题是：大量的电池是在Python 2.0的时候编写的，至今从未更新过，但是因为已经存在它们，所以实现同样功能的第三方库不会流行起来。
+    ``Python“内置电池”的哲学存在问题是：大量的电池是在Python 2.0的时候编写的，至今从未更新过，但是因为已经存在它们，所以实现同样功能的第三方库不会流行起来。``
 
 确实如此。标准库是Python的一大特性，但它们似乎要吸光所有的氧气，使得第三方库没有了生存的空间。程序员不情愿编写与标准库功能重复的库，但实现这些功能的标准库是多么的低劣啊。只有少数人，比如Reitz，愿意编写与标准库竞争的模块。
 
@@ -44,7 +44,6 @@
 Hacker News上的几个Python程序员认为我关于subprocess模块的抱怨是没有事实依据的。我很高兴看到核心开发者 `Nick Coghlan <http://www.boredomandlaziness.org/>`_  认同我的看法，Reitz也是：
 
     一篇关于subprocess模块令人沮丧的使用体验的精彩文章： `leancrew.com/all-this/2012/… <http://www.leancrew.com/all-this/2012/04/python-doesnt-play-nicely-with-others/>`_
-
-    --- Kenneth Reith( `@kennethreitz <http://twitter.com/#!/kennethreitz>`_ ) `Tue Apr 17 2012 <https://twitter.com/#!/kennethreitz/status/192391385737994240>`_
+        --- Kenneth Reith( `@kennethreitz <http://twitter.com/#!/kennethreitz>`_ ) `Tue Apr 17 2012 <https://twitter.com/#!/kennethreitz/status/192391385737994240>`_
 
 "精彩"一词有些夸张了，但是很高兴看到在Python社区有实质影响的人意识到了：对于普通程序员来说，语言以及它的函数库应该是易用的。
