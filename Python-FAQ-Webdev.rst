@@ -96,7 +96,7 @@ PHP是根据URL执行一整个文件，Python web应用则倾向"拥有"一整�
 
 一次HTTP请求往往会执行某处的一个函数(由一个路由选择)，然后给函数传递一个 ``request`` 对象参数。
 
-request对象的确切接口依赖于特定的框架，但是它们一般都比较类似：解析过的查询数据，一些cookie，请求消息头，等等。举例来说， ``\`webob <http://www.webob.org>\`_`` 的 ``Request`` 对象包含：
+request对象的确切接口依赖于特定的框架，但是它们一般都比较类似：解析过的查询数据，一些cookie，请求消息头，等等。举例来说， ``webob`` http://www.webob.org 的 ``Request`` 对象包含：
 
 - ``request.GET`` 和 ``request.POST`` 是存储解析过的查询数据的"multidict"。(对于 ``request.GET['foo']`` ，一个multidict返回的是单个值，但使用 ``getall()`` 方法则会返回所有的值)
 
