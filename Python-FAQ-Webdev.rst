@@ -252,7 +252,7 @@ markupsafe提供一个单一的类， ``Markup`` ，继承自 ``unicode`` . ``Ma
 数据库
 --------
 
-一罐子的蠕虫啊。这似乎有些武断(This is as opinionated as I'm going to get.)。
+一罐子的蠕虫啊。这话有些武断(This is as opinionated as I'm going to get.)。
 
 其一：你应该使用ORM。它是尝试将数据表映射到Python类，数据行映射到对象，查询映射到方法的物件。结果更加简单明了，通常更加容易理解，并且有时甚至正确率更高。
 
