@@ -96,7 +96,7 @@ PHP是根据URL执行一整个文件，Python web应用则倾向"拥有"一整�
 
 一次HTTP请求往往会执行某处的一个函数(由一个路由选择)，然后给函数传递一个 ``request`` 对象参数。
 
-request对象的确切接口依赖于特定的框架，但是它们一般都比较类似：解析过的查询数据，一些cookie，请求消息头，等等。举例来说， ``webob`` http://www.webob.org 的 ``Request`` 对象包含：
+request对象的确切接口依赖于特定的框架，但是它们一般都比较类似：解析过的查询数据，一些cookie，请求消息头，等等。举例来说， ``webob`` (http://www.webob.org) 的 ``Request`` 对象包含：
 
 - ``request.GET`` 和 ``request.POST`` 是存储解析过的查询数据的"multidict"。(对于 ``request.GET['foo']`` ，一个multidict返回的是单个值，但使用 ``getall()`` 方法则会返回所有的值)
 
@@ -163,5 +163,49 @@ Python(2)有两种"字符串"类型： ``str`` 和 ``unicode`` 。这是一个�
 
 XSS(跨站脚本攻击)
 -------------------
+
+实际上，现在的每项相关技术都内建某种形式的自动HTML转义过滤器。理念是：对于这样的一个模板：
+
+::
+
+    <p>Hello, ${name}!</p>
+
+当给定 ``name = '<b>'`` ，将安全地打印出 ``Hello, &lt;b&gt;!`` 。这意味着，大多数时候，你并不需要担心XSS。
+
+大多数时候，如果没有别的，你必须核对所使用框架和模板引擎的文档，确保自动HTML转义过滤功能默认开启，如果不是，则开启它。(随便说一下：对于Pyramid，Django和Flask，你能轻松获得此项功能。如果你的模板文件具备一个处理HTML的扩展，Bottle则也能自动做到。)
+
+那么，棘手的地方就是知道何时以及如何关闭它。如果你在Python代码中构建了某种复杂的HTML，且不想完全转义它，那么仅仅使得转义行为失效是个蹩脚的解决方案。如何转义失效的地方都可能发生注入。幸运的是，许多框架(至少有Pyramid和Flask)使用了 `markupsafe <http://pypi.python.org/pypi/MarkupSafe>`_ 库，它能智能地帮助避免这个问题。
+
+markupsafe提供一个单一的类， ``Markup`` ，继承自 ``unicode`` . ``Markup(u'Hello!')`` ，会产生一个行为上相当像字符串的对象。类方法 ``Markup.escape`` 工作方式相同，但会转义经过包裹的字符串中的任意HTML字符。
+
+这里有两个鬼祟的花招。第一：一个 ``Markup`` 对象不会被转义两次。请看：
+
+::
+
+    >>> s = u'<b>oh noo xss</b>'
+    >>> Markup.escape(s)
+    Markup(u'&lt;b&gt;oh noo xss&lt;/b&gt;')
+    >> Markup.escape(Markup.escape(s))
+    Markup(u'&lt;b&gt;oh noo xss&lt;/b&gt;')
+
+因此，一旦创建了一个 ``Markup`` 对象，就可将它用于你的模板，过滤器不会管它---即使它包含HTML。
+
+另一个把戏是， ``Markup`` 对象重载了所有string的方法，并且自动转义所有的参数。这意味着在Python里，你可以这么干：
+
+::
+
+    >>> user_input = u'<script>alert("pwn");</script>'
+    >>> Markup(u'<p>Hello, %s!</p>') % user_input
+    Markup(u'<p>Hello, &lt;script&gt;alert(&#34;pwn&#34;);&lt;/script&gt;!</p>')
+
+因此你可以相当安全地构建一些复杂的HTML代码，而不用太担心转义不够或者过分转义。
+
+当然，这并不完美。主要问题是你需要将 ``Markup().join(...)`` 用于一些其他的 ``Markup`` 对象，而不是 ``''.join(...)`` 。并且某些操作，比如分片(slicing)，分割(splitting)，以及正则表达式，有可能产生没有意义的结果。 **绝对** 不要试图分解一个 ``Markup`` 对象或者任何其他HTML字符串；如果实在需要的话，那就使用一个真正的解析器，比如 ``lxml`` ，但是大多数时候，你可以在将普通字符串包裹进HTML之前，对它做任何你需要的转换。
+
+------
+
+表单
+------
+
 
 
