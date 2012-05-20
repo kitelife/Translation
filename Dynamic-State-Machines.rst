@@ -67,4 +67,54 @@ Python中，一个对象的类型简单地决定于它的 ``__class__`` 属性�
     >>> hasattr(critter, 'legs')
     False
 
+我们创建了一个卵对象---从各个方面来看都是一个普通的Python对象。这个实例有一个用户空间属性：物种(species)，在对象的整个生命周期中会一直存在。作为一个卵，没有legs属性，因为我们没有指定。卵唯一能做的事情就是孵化，然后成为一只 ``毛虫(Caterpillar)`` 。
+
+::
+    
+    >>> critter.hatch()
+    >>> id(critter), type(critter), critter.speices
+    (10376583L, (class 'butterfly.Caterpillar'), 'Morpho menelaus')
+    >>> critter.legs
+    16
+    >>> critter.crawl()
+    >>> critter.eat()
+    >>> critter.hatch()
+
+(译注：这里的 ``critter.hatch()`` 的结构是一些方法调用错误信息，不知道作者是忘了写这个错误信息，还是故意不写的)
+
+注意，孵化之后的critter的id与之前是一样。critter仍具有物种属性，保存着对象是一个 ``卵`` 时我们赋予它的值。现在critter有一个名为 ``legs`` 的类属性，表明这只 ``毛虫(Caterpillar)`` 有16条腿，可以爬和吃，在 ``Caterpillar`` 类中定义的那些方法，但是不再能孵化了。
+
+::
+
+    >>> critter.pupate()
+    >>> id(critter), type(critter), critter.speices
+    (10376583L, <class 'butterfly.Pupa'>, 'Morpho menelaus')
+    >>> dir(critter)
+    ['__class__', '__delattr__', '__dict__', '__doc__', '__format__',
+    '__getattribute__', '__hash__', '__init__', '__module__', '__new__',
+    '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+    '__str__', '__subclasshook__', '__weakref__', 'emerge', 'species']
+
+这只 ``蛹(Pupa)`` 与之前 ``卵(Egg)`` 以及 ``毛虫(Caterpillar)`` 的id相同。它内部有一个实例属性 ``species`` (当然还是'Morpho menelaus')，以及一个方法, ``emerge()`` --- 能让我们的昆虫(critter)变成一只完全的 ``Butterfly`` 。
+
+::
+
+    >>> critter.emerge()
+    >>> id(critter), type(critter), critter.species
+    (10376583L, <class 'butterfly.Butterfly'>, 'Morpho menelaus')
+    >>> critter.legs
+    6
+    >>> critter.eat()
+    >>> critter.fly()
+    >>> 'reproduce' in dir(critter)
+    True
+    >>> critterling = critter.reproduce()
+    >>> id(critterling), type(critterling), critter.species
+    (10377274L, <class 'butterfly.Egg'>, 'Morpho menelaus')
+
+现在，这只完全成长的昆虫有六条腿。可以吃，飞，但是不再能爬(现实世界中的蝴蝶可以爬，但一个 ``Butterfly`` 对象不可以)，可以繁殖，创造会经历相同生命周期的critterling。
+
+实现细节
+----------
+
 
