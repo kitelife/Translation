@@ -24,3 +24,47 @@ Python中，一个对象的类型简单地决定于它的 ``__class__`` 属性�
 
 蝴蝶的生命周期
 ----------------
+
+举例来说，我们来看看一个实现蝴蝶生命周期的状态机：
+
+::
+
+    class Egg(object):
+        def __init__(self, species):
+            self.species = species
+
+        def hatch(self):
+            self.__class__ = Caterpillar
+
+    class Caterpillar(object):
+        legs = 16
+        def crawl(self): pass
+        def eat(self): pass
+        def pupate(self):
+            self.__class__ = Pupa
+
+    class Pupa(object):
+        def emerge(self):
+            self.__class__ = Butterfly
+
+    class Butterfly(object):
+        legs = 6
+        def fly(self): pass
+        def eat(self): pass
+        def reproduce(self):
+            return Egg(self.species)
+
+对象生命开始时是一个 ``卵(Egg)`` ，孵化而成为一只 ``毛虫(Caterpillar)`` ，而后成为一只 ``蛹(Pupa)`` ，最后成为一只 ``蝴蝶(Butterfly)`` ，可以繁殖，创造新的 ``卵`` 。
+
+实践过程看起来是这样的：
+
+::
+
+    >>> import buffterfly
+    >>> critter = buffterfly.Egg('Morpho menelaus')
+    >>> id(critter), type(critter), critter.species
+    (10376583L, <class 'butterfly.Egg'>, 'Morpho menelaus')
+    >>> hasattr(critter, 'legs')
+    False
+
+
