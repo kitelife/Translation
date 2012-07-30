@@ -114,4 +114,96 @@ gevent中上下文切换是通过 *yielding* 完成的。举例来说，我们�
     Ended Polling: at 2.0 seconds
     Ended Polling: at 2.0 seconds
 
+另一个显得有些编造的例子中定义了一个task函数，其结果是非确定性的(比如，对于同样的输入，不能保证它的输入是相同的)。这个函数执行的副作用是其执行过程会暂停一个随机秒数。
 
+::
+
+    import gevent
+    import random
+
+    def task(pid):
+        """
+        Some non-deterministic task
+        """
+        gevent.sleep(random.randint(0,2)*0.001)
+        print('Task', pid, 'done')
+
+    def synchronous():
+        for i in range(1, 10):
+            task(i)
+
+    def asynchronous():
+        threads = [gevent.spawn(task, i) for i in xrange(10)]
+        gevent.joinall(threads)
+
+    print('Synchronous: ')
+    synchronous()
+
+    print('Asynchronous: ')
+    asynchronous()
+
+::
+    
+    Synchronous:
+    ('Task', 1, 'done')
+    ('Task', 2, 'done')
+    ('Task', 3, 'done')
+    ('Task', 4, 'done')
+    ('Task', 5, 'done')
+    ('Task', 6, 'done')
+    ('Task', 7, 'done')
+    ('Task', 8, 'done')
+    ('Task', 9, 'done')
+    Asynchronous:
+    ('Task', 0, 'done')
+    ('Task', 2, 'done')
+    ('Task', 5, 'done')
+    ('Task', 3, 'done')
+    ('Task', 9, 'done')
+    ('Task', 4, 'done')
+    ('Task', 8, 'done')
+    ('Task', 1, 'done')
+    ('Task', 6, 'done')
+    ('Task', 7, 'done')
+
+在同步的情况下，所有的任务都是顺序执行的，这样每个任务的执行都会导致主程序的阻塞(比如，暂停主程序的执行)。
+
+这个程序的重要部分是gevent.spawn会将给定的函数包装进一个Greenlet线程。经过初始化的greenlets列表存储在数组threads中，然后传给函数gevent.joinall，它会阻塞当前程序以执行所有给定greenlets。只有当所有greenlet执行终止，当前程序才会继续向前执行。
+
+需要注意的重要事实是，异步情况下，执行的次序本质上是随机的，并且异步情况总的执行时间远远少于同步情况。事实上，同步情况下最大完成时间是20秒，因为每个任务都要暂停2秒。异步情况的最大执行时间大约是2秒，因为任务不会阻塞其他任务的执行。
+
+一个更加常见的使用案例是，异步地从一个服务器抓取数据，鉴于远程服务器的负载，访问请求的fetch()执行时间会有所不同。
+
+::
+
+    import gevent.monkey
+    gevent.monkey.patch_socket()
+
+    import gevent
+    import urllib2
+    import simplejson as json
+
+    def fetch(pid):
+        response = urllib2.urlopen('http://json-time.appspot.com/time.json')
+        result = response.read()
+        json_result = json.loads(result)
+        datetime = json_result['datetime']
+
+        print 'Process ', pid, datetime
+        return json_result['datetime']
+
+    def synchronous():
+        for i in range(1, 10):
+            fetch(i)
+
+    def asynchronous():
+        threads = []
+        for i in range(1, 10):
+            threads.append(gevent.spawn(fetch, i))
+        gevent.joinall(threads)
+
+    print 'Synchronous:'
+    synchronous()
+
+    print 'Asynchronous:'
+    asynchronous()
