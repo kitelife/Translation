@@ -71,5 +71,47 @@ gevent中上下文切换是通过 *yielding* 完成的。举例来说，我们�
 
 .. image:: https://lh5.googleusercontent.com/-vWikJrvrsOc/UBagHZ0FKUI/AAAAAAAABFU/NNsvk2d50XA/s284/flow.gif
 
-当我们在网络和输入输出相关功能中使用gevent，以便协同调度时，它的真正力量才会得以体现。
+当我们在网络和输入输出相关功能中使用gevent，以便协同调度时，它的真正力量才会得以体现。Gevent兼顾了所有细节以保证你的网络代码库能随时隐式地切换它们的greenlet上下文。这一强大能力是再怎么强调都是不过分的。但也许使用示例更有助于理解。
+
+这一例子中，select()函数通常是一个阻塞调用，在几个文件描述符之间轮询。
+
+::
+
+    import time
+    import gevent
+    from gevent import select
+
+    start = time.time()
+    tic = lamda: 'at %1.1f seconds' %(time.time() - start)
+
+    def gr1():
+        # Busy waits for a second, but we don't want to stick around...
+        print('Started Polling: ', tic())
+        select.select([],[],[],2)
+        print('Ended Polling: ', tic())
+
+    def gr2():
+        # Busy waits for a second, but we don't want to stick around...
+        print('Started Polling: ', tic())
+        select.select([], [], [], 2)
+        print('Ended Polling: ', tic())
+
+    def gr3():
+        print("Hey lets do some stuff while the greenlets poll, at ", tic())
+        gevent.sleep(1)
+
+    gevent.joinall([
+        gevent.spawn(gr1),
+        gevent.spawn(gr2),
+        gevent.spawn(gr3),
+    ])
+
+::
+
+    Started Polling: at 0.0 seconds
+    Started Polling: at 0.0 seconds
+    Hey lets do some stuff while the greenlets poll, at at 0.0 seconds
+    Ended Polling: at 2.0 seconds
+    Ended Polling: at 2.0 seconds
+
 
