@@ -25,3 +25,48 @@ gevent是一个基于libev的并发库，为各种并发以及网络相关任务
 
 Greenlets
 ^^^^^^^^^^
+
+gevent中使用的主要模式是 **Greenlet** ，一个轻量的协程，作为Python的C扩展模块提供使用。所有Greenlet都作为主程序运行在操作系统进程内，但协同调度。
+
+::
+
+    任意给定时刻只有一个greenlet正在运行。
+
+这区别于任意多进程或者线程库所提供的实际并行概念，它们都是产生由操作系统调度的进程和POSIX线程，并且确实是并行的。
+
+同步与异步执行
+^^^^^^^^^^^^^^^^
+
+并发的核心概念是一个大的任务可以被分解为一组子任务，这些子任务可以同时或者 *异步* 地调度执行，而不是一次一个或者 *同步* 地执行。两个子任务之间的切换就是我们所了解的上下文切换。
+
+gevent中上下文切换是通过 *yielding* 完成的。举例来说，我们有两个上下文，通过调用gevent.sleep(0)相互切换。
+
+::
+
+    import gevent
+
+    def foo():
+        print('Running in foo')
+        gevent.sleep(0)
+        print('Explicit context switch to foo again')
+
+    def bar():
+        print('Explicit context to bar')
+        gevent.sleep(0)
+        print('Implicit context switch back to bar')
+
+    gevent.joinall([
+        gevent.spawn(foo),
+        gevent.spawn(bar),
+    ])
+
+::
+
+    Running in foo
+    Explicit context to bar
+    Explicit context switch to foo again
+    Implicit context switch back to bar
+
+将这个程序的控制流程可视化或者使用调试器走查一遍程序来观察上下文切换是有助于理解的。
+
+.. image:: /flow.gif
