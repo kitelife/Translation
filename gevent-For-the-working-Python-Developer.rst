@@ -73,7 +73,7 @@ gevent中上下文切换是通过 *yielding* 完成的。举例来说，我们�
 
 当我们在网络和输入输出相关功能中使用gevent，以便协同调度时，它的真正力量才会得以体现。Gevent兼顾了所有细节以保证你的网络代码库能随时隐式地切换它们的greenlet上下文。这一强大能力是再怎么强调都是不过分的。但也许使用示例更有助于理解。
 
-这一例子中，select()函数通常是一个阻塞调用，在几个文件描述符之间轮询。
+这一例子中，select()函数是一个常见的阻塞调用，在几个文件描述符之间轮询。
 
 ::
 
@@ -207,3 +207,44 @@ gevent中上下文切换是通过 *yielding* 完成的。举例来说，我们�
 
     print 'Asynchronous:'
     asynchronous()
+
+确定性
+^^^^^^^^^
+
+正如前面提到的，greenlet是确定性的。给定相同的greenlets配置以及相同的输入集，它们总是会产生相同的输出。举例来说，让我们在一个多进程池与gevent池上展开一个任务，进行对比。
+
+::
+
+    import time
+
+    def echo(i):
+        time.sleep(0.001)
+        return i
+
+    # Non Deterministic Process Pool
+    from multiprocessing.pool import Pool
+
+    p = Pool(10)
+    run1 = [a for a in p.imap_unordered(echo, xrange(10))]
+    run2 = [a for a in p.imap_unordered(echo, xrange(10))]
+    run3 = [a for a in p.imap_unordered(echo, xrange(10))]
+    run4 = [a for a in p.imap_unordered(echo, xrange(10))]
+
+    print( run1 == run2 == run3 == run4)
+
+    from gevent.pool import Pool
+
+    p = Pool(10)
+    run1 = [a for a in p.imap_unordered(echo, xrange(10))]
+    run2 = [a for a in p.imap_unordered(echo, xrange(10))]
+    run3 = [a for a in p.imap_unordered(echo, xrange(10))]
+    run4 = [a for a in p.imap_unordered(echo, xrange(10))]
+
+    print( run1 == run2 == run3 == run4 )
+
+::
+
+    False
+    True
+
+
