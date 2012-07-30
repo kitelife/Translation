@@ -69,4 +69,7 @@ gevent中上下文切换是通过 *yielding* 完成的。举例来说，我们�
 
 将这个程序的控制流程可视化或者使用调试器走查一遍程序来观察上下文切换是有助于理解的。
 
-.. image:: flow.gif
+.. image:: https://lh5.googleusercontent.com/-vWikJrvrsOc/UBagHZ0FKUI/AAAAAAAABFU/NNsvk2d50XA/s128/flow.gif
+
+当我们在网络和输入输出相关功能中使用gevent，以便协同调度时，它的真正力量才会得以体现。
+
