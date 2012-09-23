@@ -460,7 +460,7 @@ As a rule, software systems do not work well until they have been used, and have
 
 Programming languages should be designed not by piling feature on top of feature, but by removing the weaknesses and restrictions that make additional features appear necessary.
 
-程序语言的设计并应该是特性的堆叠，而应该去除那些使得额外的特性显得必要的弱点和局限。
+程序语言的设计不应该是特性的堆叠，而应该去除那些使得额外的特性显得必要的弱点和局限。
 
 **RnRS**
 
