@@ -331,3 +331,143 @@ are they the O-O of the OS world? Always the promises ...
 **ron**
 
 他们是操作系统世界里的面向对象么？总是如此承诺... [译注：没怎么懂内涵]
+
+------
+
+Unix is simple. It just takes a genius to understand its simplicity.
+
+Unix是简单的，只是需要天才来理解它的简单美。
+
+**Dennis Ritchie**
+
+-----
+
+The key to performance is elegance, not battalions of special cases.
+
+性能的关键是优雅，而不是大堆的特殊情况。
+
+**Jon Bentley and Doug Mcllroy**
+
+-----
+
+Measuring programming progress by lines of code is like measuring aircraft building progress by weight.
+
+以代码行数来衡量程序设计的进度，就好比以重量来衡量飞机的制造进度。
+
+**Bill Gates**
+
+----
+
+First, solve the problem. Then, write the code.
+
+首先，解决问题。而后，编写代码。
+
+**John Johnson**
+
+----
+
+Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves.
+
+如今，大多数的软件与百万砖头堆积在一起的埃及金字塔极其相似，没有结构的完整性，仅是通过暴力和成千上万的奴隶来完成的。
+
+**Alan Kay**
+
+----
+
+Correctness is clearly the prime quality. If a system does not do what it is supposed to do, then everything else about it matters little.
+
+程序的正确性无疑是主要的特性。如果一个系统没有完成预期的事情，那么关于程序的其他一切就都毫无意义了。
+
+**Bertrand Meyer**
+
+----
+
+You can't trust code that you did not totally create yourself.
+
+你无法信任非你完全自己写的代码。
+
+**Ken Thompson**
+
+----
+
+Object-oriented design is the roman numerals of computing.
+
+面向对象设计是计算(computing)的罗马数字。
+
+**Rob Pike**
+
+----
+
+Not only is UNIX dead, it's starting to smell really bad.
+
+UNIX不仅已死，且开始臭味难闻了。
+
+**Rob Pike** circa 1991
+
+----
+
+You can't have great software without a great team, and most software teams behave like dysfunctional families.
+
+没有一个伟大的团队，就不可能有伟大的软件，但大多数的软件开发团队表现得就像不健全的家庭。
+
+**Jim McCarthy**
+
+----
+
+Good code is short, simple, and symmetrical - the challenge is figuring out how to get there.
+
+好的代码，短小、简洁，并且匀称 - 而真正的挑战在于弄清如何达到这些目标。
+
+**Sean Parent**
+
+----
+
+The best is the enemy of the good.
+
+追求完美是优秀软件的敌人。
+
+**Voltaire**
+
+The purpose of software engineering is to control complexity, not to create it.
+
+软件工程的目标是控制复杂度，而不是增加复杂性。
+
+**Dr. Pamela Zave**
+
+I object to doing things that computers can do.
+
+我反对去做那些计算机可以做的事情。
+
+**Olin Shivers**
+
+----
+
+No code is faster than no code.
+
+没有什么代码会比没有代码速度更快。
+
+**merb motto**
+
+----
+
+As a rule, software systems do not work well until they have been used, and have failed repeatedly, in real applications.
+
+一般说来，软件系统只有得到实际应用，并且经历多次失败，才能工作得很好。
+
+**Dave Parnas**
+
+----
+
+Programming languages should be designed not by piling feature on top of feature, but by removing the weaknesses and restrictions that make additional features appear necessary.
+
+程序语言的设计并应该是特性的堆叠，而应该去除那些使得额外的特性显得必要的弱点和局限。
+
+**RnRS**
+
+----
+
+So much complexity in software comes from trying to make one thing do two things.
+
+软件中如此多的复杂性皆来自于想在做一件事的同时多做几件事。
+
+**Ryan Singer**
