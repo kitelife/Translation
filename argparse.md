@@ -1,9 +1,3 @@
----
-layout: post
-title: argparse - 命令行选项与参数解析（译）
-tags: [Python, 翻译]
----
-
 原文：[argparse – Command line option and argument parsing](http://pymotw.com/2/argparse/)
 
 译者：[youngsterxyf](https://github.com/youngsterxyf)

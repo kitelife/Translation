@@ -1,8 +1,3 @@
----
-layout: post
-title: JavaScript初学者应知的24条最佳实践（译）
-tags: [JavaScript, 翻译]
----
 
 原文：[24 JavaScript Best Practices for Beginners](http://net.tutsplus.com/tutorials/javascript-ajax/24-javascript-best-practices-for-beginners/)
 
